@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.hankcs.nlp:hanlp-lucene-plugin:1.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/repo/gradle/caches/modules-2/files-2.1/com.hankcs.nlp/hanlp-lucene-plugin/1.1.2/32768406bdf18da05ff4720db6e9cb133795a5cf/hanlp-lucene-plugin-1.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/repo/gradle/caches/modules-2/files-2.1/com.hankcs.nlp/hanlp-lucene-plugin/1.1.2/59096a1b454911757fd112240279514c49a521ba/hanlp-lucene-plugin-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
