@@ -1,8 +1,6 @@
 package com.buswe.module.cms.entity;
 
 import com.buswe.core.domain.AuditableEntity;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -13,7 +11,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "cms_category")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+
 public class Category extends AuditableEntity{
     private String categoryName;
     private String categoryRemark;

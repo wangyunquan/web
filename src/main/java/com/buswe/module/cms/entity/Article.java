@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 @Entity
 @Table(name = "cms_article")
-@Cache(usage= CacheConcurrencyStrategy.READ_WRITE)
+
 @Indexed //hibernate search
 @Analyzer(impl=HanLPIndexAnalyzer.class)
 public class Article extends AuditableEntity {
@@ -37,6 +37,9 @@ public class Article extends AuditableEntity {
     //缓存子对象
     @Cache(usage=CacheConcurrencyStrategy.READ_WRITE)
     private Set<Lable> lables = new HashSet<Lable>(0);
+
+    @OneToMany(cascade= CascadeType.ALL, fetch= FetchType.LAZY, mappedBy="article")
+    private Set<ArticleComment> articleComments = new HashSet<ArticleComment>(0);
 
 
     @FieldBridge(impl=ArticleTextBridge.class)
@@ -211,5 +214,13 @@ public class Article extends AuditableEntity {
 
     public void setArticleViewcount(Integer articleViewcount) {
         this.articleViewcount = articleViewcount;
+    }
+
+    public Set<ArticleComment> getArticleComments() {
+        return articleComments;
+    }
+
+    public void setArticleComments(Set<ArticleComment> articleComments) {
+        this.articleComments = articleComments;
     }
 }

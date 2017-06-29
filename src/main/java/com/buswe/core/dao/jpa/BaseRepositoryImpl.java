@@ -26,19 +26,15 @@ public class BaseRepositoryImpl<T, ID extends Serializable>
 {
   private EntityManager entityManager;
   private Class<T> domainClass;
-  public BaseRepositoryImpl(JpaEntityInformation<T, ID> entityInformation, EntityManager entityManager)
+
+  public BaseRepositoryImpl(JpaEntityInformation entityInformation,
+                            EntityManager entityManager)
   {
     super(entityInformation, entityManager);
     this.entityManager = entityManager;
     this.domainClass = entityInformation.getJavaType();
   }
-  
-  public BaseRepositoryImpl(Class<T> domainClass, EntityManager em)
-  {
-    super(domainClass, em);
-    this.entityManager = em;
-    this.domainClass = domainClass;
-  }
+
   
   public EntityManager getEntityManager()
   {

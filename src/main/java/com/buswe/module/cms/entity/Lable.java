@@ -1,18 +1,15 @@
 package com.buswe.module.cms.entity;
 
 import com.buswe.core.domain.AuditableEntity;
-import org.hibernate.annotations.*;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  * Created by wangy on 2017/6/26.
  */
 @Entity
 @Table(name = "cms_lable")
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+
 public class Lable extends AuditableEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)

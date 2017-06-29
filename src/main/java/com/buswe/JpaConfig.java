@@ -4,6 +4,7 @@ import com.alibaba.druid.filter.logging.Log4jFilter;
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.buswe.core.dao.jpa.BaseRepositoryImpl;
+import org.hibernate.jpa.AvailableSettings;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -94,6 +95,9 @@ class JpaConfig implements TransactionManagementConfigurer {
 		jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, dialect);
 		jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, hbm2ddlAuto);
 		jpaProperties.put(org.hibernate.cfg.Environment.SHOW_SQL, showSql);
+		 jpaProperties.put(org.hibernate.cfg.AvailableSettings.CACHE_REGION_FACTORY,"org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory");
+
+		// hibernate.cache.region.factory_class
 		entityManagerFactoryBean.setJpaProperties(jpaProperties);
 		entityManagerFactoryBean.setLoadTimeWeaver(new InstrumentationLoadTimeWeaver());
 		return entityManagerFactoryBean;

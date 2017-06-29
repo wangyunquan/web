@@ -2,8 +2,6 @@ package com.buswe.module.cms.entity;
 
 import com.buswe.core.domain.IdEntity;
 import com.hankcs.lucene.HanLPIndexAnalyzer;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.search.annotations.*;
 
 import javax.persistence.Entity;
@@ -14,7 +12,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "cms_article_text")
-@Cache(usage= CacheConcurrencyStrategy.READ_WRITE)
+
 @Indexed //hibernate search
 @Analyzer(impl=HanLPIndexAnalyzer.class)
 public class ArticleText extends IdEntity {

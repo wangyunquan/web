@@ -14,6 +14,8 @@ import java.util.Set;
 @Entity
 @Table(name = "cms_article_comment")
 public class ArticleComment extends IdEntity {
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="article_id", nullable=false)
     private Article article;
     private String CText;
     private Date CDatetime;

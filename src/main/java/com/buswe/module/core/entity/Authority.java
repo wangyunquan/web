@@ -23,9 +23,6 @@ public class Authority
 	private Boolean enable = Boolean.TRUE;
 
 	@ManyToMany(mappedBy = "authorities")
-	private Set<Userinfo> userinfos = new HashSet<Userinfo>();
-
-	@ManyToMany(mappedBy = "authorities")
 	private Set<Roleinfo> roleinfos = new HashSet<Roleinfo>();
 
 	public String getName() {
@@ -44,13 +41,7 @@ public class Authority
 		this.enable = enable;
 	}
 
-	public Set<Userinfo> getUserinfos() {
-		return userinfos;
-	}
 
-	public void setUserinfos(Set<Userinfo> userinfos) {
-		this.userinfos = userinfos;
-	}
 
 	public Set<Roleinfo> getRoleinfos() {
 		return roleinfos;
