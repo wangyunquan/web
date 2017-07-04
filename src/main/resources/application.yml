@@ -16,7 +16,7 @@ spring:
 
     hibernate:
       dialect: org.hibernate.dialect.MySQLDialect
-      hbm2ddl.auto: update
+      hbm2ddl.auto: create
       show_sql: false
 
     redis:
